@@ -275,7 +275,7 @@ body {
   box-shadow: var(--shadow-lg);
 }
 
-.results-carousel .item img,
+.results-carousel .item img
 .results-carousel video {
   margin: 0;
   border-radius: var(--border-radius);
