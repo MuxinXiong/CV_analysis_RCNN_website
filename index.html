@@ -380,6 +380,14 @@
     <section class="hero is-small">
       <div class="hero-body">
         <div class="container">
+          <div class="content has-text-justified">
+            <p>
+              Prior work from our group and collaborators demonstrated that machine-learning frameworks can accurately detect and classify 
+              redox events in cyclic voltammetry, achieving high performance on simulated data. However, experimental testing results in 
+              the previous publication indicated that the model's performance was less optimal when applied to real experimental data. 
+              (ACS Electrochem. 2025, 1(1), 52-62)
+            </p>
+          </div>
           <!-- <div id="results-carousel" class="carousel results-carousel">
             <div class="item">
               <img src="static/images/New_finetuned-vs-pretrained_fixed.png" alt="First research result visualization" loading="lazy" />
@@ -407,21 +415,54 @@
             </div>
           </div> -->
             <div class="item">
+              <h2 class="title has-text-centered" style="margin-bottom:2rem">Incorporation of Experimental CV Data into the Training Process</h2>
               <img src="static/images/Fixed_finetuned-vs-pretrained.png" alt="First research result visualization" loading="lazy" />
-              <h2 class="subtitle has-text-centered">
-                First image description.
+              <h2 class="subtitle has-text-centered" style="margin-bottom:6rem">
+                The model begins with a pretrained network that learns to detect and classify redox mechanisms in cyclic voltammetry (CV) 
+                data derived from a large simulated dataset, achieving high performance with an F1 score above 0.98. However, discrepancies 
+                between simulated and real experimental data distributions pose a challenge. To address this, a fine-tuning process is 
+                implemented, enabling the model to adapt specifically to the feature distributions present in real experimental CV data. 
+                This approach allows the model to incorporate diverse sources of CV data, enhancing its ability to generalize and accurately 
+                classify experimental data.
               </h2>
             </div>
             <div class="item">
+              <h2 class="title has-text-centered" style="margin-bottom:2rem">Faster-RCNN Approach for Detection and Classification of Redox Reactions in CV Data</h2>
               <img src="static/images/Detail_RCNN_overlook.png" alt="Second research result visualization" loading="lazy" />
-              <h2 class="subtitle has-text-centered">
-                Second image description.
+              <h2 class="subtitle has-text-centered" style="margin-bottom:6rem">
+                The raw experimental or simulated cyclic voltammetry (CV) data, including multiple scan rates, is preprocessed into a 3D 
+                tensor, capturing forward and backward current density with their corresponding scan rates. The tensor then undergoes feature 
+                extraction through a Feature Pyramid Network (FPN), creating a multi-level feature map from finer to coarser features. This 
+                map is processed by the Region Proposal Network (RPN), which generates proposals for regions with potential redox reactions. 
+                Finally, these proposals are passed through the ROI head component, which classifies them and outputs the mechanism probability 
+                score, completing the detection and classification of redox reactions in the CV data.
               </h2>
             </div>
             <div class="item">
+              <h2 class="title has-text-centered" style="margin-bottom:2rem">Examples: Predications Comparison on Experimental Data</h2>
               <img src="static/images/Fixed_cmp3.png" alt="Third research result visualization" loading="lazy" />
+              <h2 class="subtitle has-text-centered" style="margin-bottom:6rem">
+                Incorporating real experimental data significantly improves prediction performance over the simulated-only pretrained model. 
+                In Panels A and B, the pretrained model struggles to capture the correct locations and mechanisms, as shown by the grey boxes 
+                representing the ground truth. On the left side, the pretrained model fails to make accurate judgments, whereas the right side 
+                of Panels A and B shows the fine-tuned model successfully identifying the correct mechanism and redox detection boxes. Panel 
+                C further highlights that the fine-tuned model is more confident in assigning scores compared to the pretrained model.
+              </h2>
+            </div>
+            <div class="content has-text-justified">
+              <p>
+                Three components are trainable: (1) the backbone encoder (feature extractor), which adapts representations to real CV artifacts 
+                (baseline drift, capacitive currents, noise textures); (2) the Region Proposal Network (RPN), which recalibrates objectness and 
+                anchor/box regression to real peak shapes and placements; and (3) the ROI head, which refines classification and bounding-box 
+                regression to match real scan-rate patterns and mechanism signatures. Let's examine how updating each component affects performance.
+              </p>
+            </div>
+            <div class="item has-text-centered">
+              <h2 class="title has-text-centered" style="margin-bottom:2rem">Pretrained & Finetuned Model Performance on Held-Out Experimental Samples</h2>
+              <img src="static/images/table.png" alt="Fourth research result visualization" loading="lazy" />
               <h2 class="subtitle has-text-centered">
-                Third image description.
+                Across different finetuning settings, letting the backbone adapt to real CVs yield the largest improvement over the pretrained baseline, 
+                suggesting the RPN & ROI head transfer well, and the key is aligning features to the real-data distribution.
               </h2>
             </div>
             <!-- <div class="item">
