@@ -255,11 +255,11 @@
                   <!-- <sup>*</sup> -->
                 </span>
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Weitong Zhang</a>,
+                  <a href="https://zeroweight.github.io/" target="_blank">Weitong Zhang</a>,
                   <!-- <sup>*</sup> -->
                 </span>
                 <span class="author-block">
-                  <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Shelley Minteer</a>,
+                  <a href="https://sites.mst.edu/shelleyminteer/" target="_blank">Shelley Minteer</a>,
                 </span>
                 <span class="author-block">
                   <a href="https://cliulab.com/" target="_blank">Chong Liu</a>
@@ -385,7 +385,7 @@
               Prior work from our group and collaborators demonstrated that machine-learning frameworks can accurately detect and classify 
               redox events in cyclic voltammetry, achieving high performance on simulated data. However, experimental testing results in 
               the previous publication indicated that the model's performance was less optimal when applied to real experimental data. 
-              (ACS Electrochem. 2025, 1(1), 52-62)
+              (<a href="https://doi.org/10.1021/acselectrochem.4c00014" target="_blank">ACS Electrochem. 2025, 1(1), 52-62</a>)
             </p>
           </div>
           <!-- <div id="results-carousel" class="carousel results-carousel">
@@ -451,10 +451,12 @@
             </div>
             <div class="content has-text-justified">
               <p>
-                Three components are trainable: (1) the backbone encoder (feature extractor), which adapts representations to real CV artifacts 
-                (baseline drift, capacitive currents, noise textures); (2) the Region Proposal Network (RPN), which recalibrates objectness and 
-                anchor/box regression to real peak shapes and placements; and (3) the ROI head, which refines classification and bounding-box 
-                regression to match real scan-rate patterns and mechanism signatures. Let's examine how updating each component affects performance.
+                Incorporating real data enables fine-tuning and achieving higher performance, but what exactly is being updated? What specific 
+                adjustments help close the gap between experimental and simulated results? There are three trainable components: (1) the backbone 
+                encoder (feature extractor), which adapts representations to real CV artifacts (baseline drift, capacitive currents, noise 
+                textures); (2) the Region Proposal Network (RPN), which recalibrates objectness and anchor/box regression to real peak shapes and 
+                placements; and (3) the ROI head, which refines classification and bounding-box regression to match real scan-rate patterns and 
+                mechanism signatures.
               </p>
             </div>
             <div class="item has-text-centered">
